@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/aop
+                           http://www.springframework.org/schema/aop/spring-aop.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <bean id="hello" class="com.dyl.Hello" lazy-init="true">
+        <property name="name" value="hello"/>
+        <property name="map">
+            <map>
+                <entry key="name" value="zhangsan"/>
+                <entry key="age" value="13"/>
+                <entry key="sex" value="girl"/>
+            </map>
+        </property>
+    </bean>
+
+    <bean id="hello1" class="com.dyl.Hello" p:name="zhangsan"/>
+    <bean id="hello2" class="com.dyl.Hello" c:name="李四"/>
+
+    <!-- AOP 实现方式1 -->
+    <!--<bean id="beforeAdvice" class="com.dyl.springaop.Log"/>-->
+    <!--<bean id="afterAdvice" class="com.dyl.springaop.AfterLog"/>-->
+    <!--<bean id="userService" class="com.dyl.springaop.UserServiceImpl"/>-->
+    <!--<aop:config>-->
+        <!--<aop:pointcut id="pointcut" expression="execution(* com.dyl.springaop.UserService.*(..))"/>-->
+
+        <!--<aop:advisor advice-ref="afterAdvice" pointcut-ref="pointcut"/>-->
+        <!--<aop:advisor advice-ref="beforeAdvice" pointcut-ref="pointcut"/>-->
+    <!--</aop:config>-->
+
+    <!-- AOP 实现方式2 -->
+    <!--<bean id="advise" class="com.dyl.springaop.MyPointCut"/>-->
+    <!--<bean id="userService1" class="com.dyl.springaop.UserServiceImpl"/>-->
+    <!--<aop:config>-->
+        <!--<aop:aspect ref="advise">-->
+            <!--<aop:pointcut id="point" expression="execution(* com.dyl.springaop.UserService.*(..))"/>-->
+            <!--<aop:before method="myBefore" pointcut-ref="point"/>-->
+            <!--<aop:after method="myAfter" pointcut-ref="point"/>-->
+        <!--</aop:aspect>-->
+    <!--</aop:config>-->
+
+    <bean class="com.dyl.springaop.AnnotationAOP"/>
+    <aop:aspectj-autoproxy proxy-target-class="true"/> <!--true 使用cglib,false 使用jdk方式-->
+    <bean id="userService2" class="com.dyl.springaop.UserServiceImpl"/>
+</beans>
