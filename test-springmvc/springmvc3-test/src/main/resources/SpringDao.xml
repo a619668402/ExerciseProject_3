@@ -36,19 +36,4 @@
         <property name="basePackage" value="com.dyl.mapper"/>
     </bean>
 
-    <bean class="org.springframework.jdbc.datasource.DataSourceTransactionManager" id="transactionManager">
-        <property name="dataSource" ref="dataSource"/>
-    </bean>
-
-    <tx:advice transaction-manager="transactionManager" id="tx">
-        <tx:attributes>
-            <tx:method name="*" propagation="REQUIRED"/>
-        </tx:attributes>
-    </tx:advice>
-
-    <aop:config>
-        <aop:pointcut id="pointcut" expression="execution(* com.dyl.service.impl.*.*(..))"/>
-        <aop:advisor advice-ref="tx" pointcut-ref="pointcut"/>
-    </aop:config>
-
 </beans>

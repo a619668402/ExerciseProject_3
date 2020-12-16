@@ -19,6 +19,7 @@ public class UserServiceImpl implements UserService {
 
     public void insert(User user) {
         userMapper.insert(user);
+//        int i = 1 / 0;
     }
 
     public List<User> getAll() {
