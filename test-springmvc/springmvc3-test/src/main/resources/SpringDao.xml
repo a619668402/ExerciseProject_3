@@ -1,17 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:aop="http://www.springframework.org/schema/aop"
-       xmlns:tx="http://www.springframework.org/schema/tx"
-       xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-                           http://www.springframework.org/schema/beans/spring-beans.xsd
-                           http://www.springframework.org/schema/tx
-                           http://www.springframework.org/schema/tx/spring-tx.xsd
-                           http://www.springframework.org/schema/context
-                           http://www.springframework.org/schema/context/spring-context.xsd
-                           http://www.springframework.org/schema/aop
-                           http://www.springframework.org/schema/aop/spring-aop.xsd">
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
     <!--数据源-->
     <bean class="com.mchange.v2.c3p0.ComboPooledDataSource" id="dataSource">
         <property name="driverClass" value="com.mysql.jdbc.Driver"/>
@@ -23,13 +14,30 @@
     <!--mybatis 使用SqlSessionFactoryBean-->
     <bean class="com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean" id="sessionFactory">
         <property name="dataSource" ref="dataSource"/>
+        <!--configLocation 和 configuration 不能同时存在-->
         <!--<property name="configLocation" value="classpath:mybatis.xml"/>-->
         <property name="typeAliasesPackage" value="com.dyl.pojo"/>
         <property name="configuration" ref="mybatisConfiguration"/>
+        <property name="plugins">
+            <array>
+                <!--mybatis-plus 分页-->
+                <bean class="com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor" id="paginationInterceptor">
+                    <property name="countSqlParser">
+                        <bean class="com.baomidou.mybatisplus.extension.plugins.pagination.optimize.JsqlParserCountOptimize">
+                            <property name="optimizeJoin" value="true"/>
+                        </bean>
+                    </property>
+                </bean>
+            </array>
+        </property>
+        <!--扫描 mapper.xml 文件-->
+        <property name="mapperLocations" value="classpath:com/dyl/mapper/*.xml"/>
     </bean>
     <bean class="com.baomidou.mybatisplus.core.MybatisConfiguration" id="mybatisConfiguration">
+        <!--驼峰命名-->
         <property name="mapUnderscoreToCamelCase" value="false"/>
     </bean>
+
     <!--扫描mapper文件-->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="sqlSessionFactoryBeanName" value="sessionFactory"/>

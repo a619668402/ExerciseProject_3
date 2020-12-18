@@ -4,9 +4,10 @@ import com.dyl.pojo.User;
 import com.dyl.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @Controller
 public class TestController {
@@ -35,5 +36,30 @@ public class TestController {
         user.setPassWord("123");
         userService.insert(user);
         return "success";
+    }
+
+    @RequestMapping("getAll")
+    public String getAll(Model model) {
+        List<User> users = userService.getAll();
+        model.addAttribute("users", users);
+        return "test";
+    }
+
+    @RequestMapping("getByPage/{page}")
+    public String getByPage(@PathVariable("page") int page, Model model) {
+        List<User> users = userService.getByPage(page);
+        model.addAttribute("users", users);
+        return "test";
+    }
+
+    @RequestMapping(value = "login.tips", method = RequestMethod.POST)
+    @ResponseBody
+    public String login(User user) {
+        User user1 = userService.selectUserByUser(user);
+        if (user1 != null) {
+            return "success";
+        } else {
+            return "failure";
+        }
     }
 }

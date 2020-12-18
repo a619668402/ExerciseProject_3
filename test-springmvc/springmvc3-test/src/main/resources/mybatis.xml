@@ -12,7 +12,7 @@
         <!--<package name="com.dyl.pojo"/>-->
     <!--</typeAliases>-->
 
-    <!--<mappers>-->
-        <!--<package name="com.dyl.mapper"/>-->
-    <!--</mappers>-->
+    <mappers>
+        <package name="com.dyl.mapper"/>
+    </mappers>
 </configuration>

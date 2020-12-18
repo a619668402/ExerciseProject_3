@@ -1,0 +1,21 @@
+person:
+#  name: zhangsan
+  age: 3
+  hobby: [Java, Python, Swift]
+  maps:
+    username: zhangsan
+    password: 123
+    sex: gender
+  dog:
+    name: luky
+    age: 4
+logging:
+  level:
+    com.dyl: debug
+  #file:
+    #path: /Users/mac/Desktop/log
+  file:
+    name: /Users/mac/Desktop/log/test.log
+  logback:
+    rollingpolicy:
+      max-file-size: 1MB

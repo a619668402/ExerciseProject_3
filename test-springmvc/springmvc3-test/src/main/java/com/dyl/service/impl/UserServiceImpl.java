@@ -1,5 +1,7 @@
 package com.dyl.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.dyl.mapper.UserMapper;
 import com.dyl.pojo.User;
 import com.dyl.service.UserService;
@@ -14,7 +16,8 @@ public class UserServiceImpl implements UserService {
     private UserMapper userMapper;
 
     public User getById(long id) {
-        return userMapper.selectById(id);
+//        return userMapper.selectById(id);
+        return userMapper.getById((int) id);
     }
 
     public void insert(User user) {
@@ -29,4 +32,20 @@ public class UserServiceImpl implements UserService {
     public void deleteById(long id) {
         userMapper.deleteById(id);
     }
+
+    public List<User> getByPage(int page) {
+        QueryWrapper<User> wrapper = new QueryWrapper<User>();
+        Page<User> selectpage = new Page<User>(page, 10);
+        Page<User> result = userMapper.selectPage(selectpage, wrapper);
+        return result.getRecords();
+    }
+
+    public User selectUserByUser(User user) {
+        QueryWrapper<User> wrapper = new QueryWrapper<User>();
+        wrapper.eq("userName", user.getUserName());
+        wrapper.eq("passWord", user.getPassWord());
+        return userMapper.selectOne(wrapper);
+    }
+
+
 }

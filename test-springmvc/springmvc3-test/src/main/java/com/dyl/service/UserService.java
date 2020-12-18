@@ -12,4 +12,8 @@ public interface UserService {
     public List<User> getAll();
 
     public void deleteById(long id);
+
+    public List<User> getByPage(int page);
+
+    public User selectUserByUser(User user);
 }

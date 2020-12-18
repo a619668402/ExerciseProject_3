@@ -11,6 +11,19 @@
     <title>$Title$</title>
   </head>
   <body>
-  $END$
+  <button id="btn">click</button>
+  <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script>
+    $(function () {
+        $("#btn").click(function () {
+            $.ajax({
+                url: '${pageContext.request.contextPath}/getone/123',
+                success: function (data) {
+                    console.log(data)
+                }
+            })
+        })
+    })
+  </script>
   </body>
 </html>
