@@ -19,3 +19,8 @@ logging:
   logback:
     rollingpolicy:
       max-file-size: 1MB
+#spring:
+#  mail:
+#    host: smtp.qq.com
+#    username: 619668402@qq.com
+#    password: jknbwsuhnffmbbdd

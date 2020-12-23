@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/Exercise?characterEncoding=UTF-8
+    username: root
+    password: 123456
+#  security:
+#    user:
+#      name: admin
+#      password: 123
+
+mybatis-plus:
+  type-aliases-package: com.dyl.pojo
+  configuration:
+    map-underscore-to-camel-case: false

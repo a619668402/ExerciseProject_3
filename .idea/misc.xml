@@ -5,7 +5,18 @@
       <list>
         <option value="$PROJECT_DIR$/test-redis/pom.xml" />
         <option value="$PROJECT_DIR$/redis-spring-boot/pom.xml" />
+        <option value="$PROJECT_DIR$/test-spring/pom.xml" />
+        <option value="$PROJECT_DIR$/test-springmvc/pom.xml" />
+        <option value="$PROJECT_DIR$/test-springboot/pom.xml" />
+        <option value="$PROJECT_DIR$/test-springboot2/pom.xml" />
+        <option value="$PROJECT_DIR$/test-dubbo/pom.xml" />
+        <option value="$PROJECT_DIR$/test-elasticsearch/pom.xml" />
       </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/test-springmvc/test-springmvc3/pom.xml" />
+      </set>
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK">

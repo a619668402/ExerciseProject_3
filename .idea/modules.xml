@@ -3,7 +3,19 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/redis-spring-boot/redis-spring-boot.iml" filepath="$PROJECT_DIR$/redis-spring-boot/redis-spring-boot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/test-springmvc/springmvc-test/springmvc-test.iml" filepath="$PROJECT_DIR$/test-springmvc/springmvc-test/springmvc-test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/test-springmvc/springmvc2-test/springmvc2-test.iml" filepath="$PROJECT_DIR$/test-springmvc/springmvc2-test/springmvc2-test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/test-springmvc/springmvc3-test/springmvc3-test.iml" filepath="$PROJECT_DIR$/test-springmvc/springmvc3-test/springmvc3-test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/test-dubbo/test-consumer/test-consumer.iml" filepath="$PROJECT_DIR$/test-dubbo/test-consumer/test-consumer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/test-dubbo/test-dubbo.iml" filepath="$PROJECT_DIR$/test-dubbo/test-dubbo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/test-elasticsearch/test-elasticsearch.iml" filepath="$PROJECT_DIR$/test-elasticsearch/test-elasticsearch.iml" />
+      <module fileurl="file://$PROJECT_DIR$/test-dubbo/test-provider/test-provider.iml" filepath="$PROJECT_DIR$/test-dubbo/test-provider/test-provider.iml" />
       <module fileurl="file://$PROJECT_DIR$/test-redis/test-redis.iml" filepath="$PROJECT_DIR$/test-redis/test-redis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/test-springmvc/test-servlet/test-servlet.iml" filepath="$PROJECT_DIR$/test-springmvc/test-servlet/test-servlet.iml" />
+      <module fileurl="file://$PROJECT_DIR$/test-spring/test-spring.iml" filepath="$PROJECT_DIR$/test-spring/test-spring.iml" />
+      <module fileurl="file://$PROJECT_DIR$/test-springboot/test-springboot.iml" filepath="$PROJECT_DIR$/test-springboot/test-springboot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/test-springboot2/test-springboot2.iml" filepath="$PROJECT_DIR$/test-springboot2/test-springboot2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/test-springmvc/test-springmvc.iml" filepath="$PROJECT_DIR$/test-springmvc/test-springmvc.iml" />
     </modules>
   </component>
 </project>

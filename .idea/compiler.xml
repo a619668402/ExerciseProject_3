@@ -2,22 +2,49 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="redis-spring-boot" />
+        <module name="springmvc-test" />
+        <module name="springmvc2-test" />
+        <module name="springmvc3-test" />
+        <module name="test-consumer" />
+        <module name="test-elasticsearch" />
+        <module name="test-provider" />
         <module name="test-redis" />
+        <module name="test-servlet" />
+        <module name="test-spring" />
+        <module name="test-springboot" />
+        <module name="test-springboot2" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="redis-spring-boot" target="1.8" />
+      <module name="springmvc-test" target="1.5" />
+      <module name="springmvc2-test" target="1.5" />
+      <module name="springmvc3-test" target="1.5" />
+      <module name="test-consumer" target="1.5" />
+      <module name="test-dubbo" target="1.5" />
+      <module name="test-elasticsearch" target="1.8" />
+      <module name="test-provider" target="1.5" />
       <module name="test-redis" target="1.5" />
+      <module name="test-servlet" target="1.5" />
+      <module name="test-spring" target="1.7" />
+      <module name="test-springboot" target="1.8" />
+      <module name="test-springboot2" target="1.8" />
+      <module name="test-springmvc" target="1.5" />
+      <module name="test-springmvc3" target="1.5" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="redis-spring-boot" options="-parameters" />
+      <module name="test-elasticsearch" options="-parameters" />
+      <module name="test-springboot" options="-parameters" />
+      <module name="test-springboot2" options="-parameters" />
     </option>
   </component>
 </project>
