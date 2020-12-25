@@ -13,7 +13,7 @@
                            http://www.springframework.org/schema/tx
                            http://www.springframework.org/schema/tx/spring-tx.xsd">
 
-    <context:component-scan base-package="com.dyl.service"/>
+    <context:component-scan base-package="com.test.service"/>
 
     <bean class="org.springframework.jdbc.datasource.DataSourceTransactionManager" id="transactionManager">
         <property name="dataSource" ref="dataSource"/>
@@ -26,7 +26,7 @@
     </tx:advice>
 
     <aop:config>
-        <aop:pointcut id="pointcut" expression="execution(* com.dyl.service.impl.*.*(..))"/>
+        <aop:pointcut id="pointcut" expression="execution(* com.test.service.impl.*.*(..))"/>
         <aop:advisor advice-ref="tx" pointcut-ref="pointcut"/>
     </aop:config>
 </beans>

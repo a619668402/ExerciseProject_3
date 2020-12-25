@@ -10,7 +10,7 @@
                            http://www.springframework.org/schema/mvc
                            http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
-    <context:component-scan base-package="com.dyl.controller"/>
+    <context:component-scan base-package="com.test.controller"/>
 
     <mvc:default-servlet-handler/>
 
@@ -51,7 +51,7 @@
             <!--bean配置的就是拦截器-->
             <mvc:mapping path="/**"/>
             <mvc:exclude-mapping path="/login"/>
-            <bean class="com.dyl.interceptor.MyInterceptor"/>
+            <bean class="com.test.interceptor.MyInterceptor"/>
         </mvc:interceptor>
     </mvc:interceptors>
 </beans>

@@ -9,10 +9,10 @@
     <!--</settings>-->
 
     <!--<typeAliases>-->
-        <!--<package name="com.dyl.pojo"/>-->
+        <!--<package name="com.testt.pojo"/>-->
     <!--</typeAliases>-->
 
     <mappers>
-        <package name="com.dyl.mapper"/>
+        <package name="com.test.mapper"/>
     </mappers>
 </configuration>

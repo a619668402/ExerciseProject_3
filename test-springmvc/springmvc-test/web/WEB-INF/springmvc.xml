@@ -12,5 +12,5 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
-    <bean id="/hello" class="com.dyl.controller.HelloController"/>
+    <bean id="/hello" class="com.test.controller.HelloController"/>
 </beans>

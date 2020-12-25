@@ -10,6 +10,6 @@ spring:
 #      password: 123
 
 mybatis-plus:
-  type-aliases-package: com.dyl.pojo
+  type-aliases-package: com.test.pojo
   configuration:
     map-underscore-to-camel-case: false
